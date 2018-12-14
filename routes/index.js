@@ -21,6 +21,7 @@ router.get('/tuijian', function(req, res, next) {
 });
 
 router.get('/edit', function(req, res, next) {
+  console.log(req.cookies);
   if(!req.cookies.user){
     return res.render('login',{});
   }
