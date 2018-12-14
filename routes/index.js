@@ -21,8 +21,8 @@ router.get('/tuijian', function(req, res, next) {
 });
 
 router.get('/edit', function(req, res, next) {
-  console.log(req.cookies);
-  if(!req.cookies.user){
+  console.log(req.cookies.user == 'admin');
+  if(req.cookies.user != 'admin'){
     return res.render('login',{});
   }
   var type = req.query.type;
@@ -38,7 +38,7 @@ router.get('/edit', function(req, res, next) {
       case 'manager':
         obj = {};
         break;
-      case 'cookies':
+      case 'xiaoliao':
         obj = {};
         break;
       default :
